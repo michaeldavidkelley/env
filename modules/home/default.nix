@@ -20,6 +20,11 @@ in {
         type = types.str;
         default = "users";
       };
+
+      includeDOVPN = mkOption {
+        type = types.bool;
+        default = false;
+      };
     };
   };
 
@@ -50,6 +55,13 @@ in {
 
           ".gitconfig" = {
             source = (../../dotfiles/.gitconfig. + "${cfg.user}");
+          };
+
+          "bin/do-vpn.sh" = mkIf cfg.includeDOVPN {
+            source = ../../bin/do-vpn.sh;
+          };
+          "bin/hipreport.sh" = mkIf cfg.includeDOVPN {
+            source = ../../bin/hipreport.sh;
           };
         };
       };

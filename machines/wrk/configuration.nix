@@ -11,6 +11,7 @@
     dev.enable = true;
     home =  {
       user = "mkelley";
+      includeDOVPN = true;
     };
   };
 
