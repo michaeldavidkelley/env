@@ -25,6 +25,9 @@ in {
 
     nixpkgs = {
       config.allowUnfree = true;
+      overlays = [
+        (import ../../overlays/mosh.nix)
+      ];
     };
 
     time.timeZone = "America/New_York";
@@ -65,6 +68,7 @@ in {
       htop
       inetutils
       jq
+      mosh
       nix-index
       openssl
       tmux
@@ -76,6 +80,7 @@ in {
 
     programs = {
       fish.enable = true;
+      mosh.enable = true;
     };
     services.openssh = {
       enable = true;
