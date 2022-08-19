@@ -3,7 +3,7 @@ with lib;
 let
   cfg = config.mkelley.dev;
 in {
-  options.nanzhong.dev = {
+  options.mkelley.dev = {
     enable = mkEnableOption "Dev configuration";
   };
 

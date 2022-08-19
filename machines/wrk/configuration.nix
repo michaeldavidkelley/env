@@ -6,7 +6,7 @@
 
   system.stateVersion = "22.05";
 
-  nanzhong = {
+  mkelley = {
     common.enable = true;
     dev.enable = true;
     home =  {
