@@ -3,7 +3,8 @@
   # details gathered from the active system.
   networking = {
     hostName = "wrk";
-    nameservers = [ "8.8.8.8" ];
+    nameservers = [ "10.124.57.141" ];
+    search = [ "internal.digitalocean.com" "consul" ];
     defaultGateway = "10.124.56.1";
     dhcpcd.enable = false;
     usePredictableInterfaceNames = lib.mkForce false;
