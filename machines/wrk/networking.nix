@@ -2,10 +2,9 @@
   # This file was populated at runtime with the networking
   # details gathered from the active system.
   networking = {
-    nameservers = [ "8.8.8.8"
- ];
+    hostName = "wrk";
+    nameservers = [ "8.8.8.8" ];
     defaultGateway = "10.124.56.1";
-    defaultGateway6 = "";
     dhcpcd.enable = false;
     usePredictableInterfaceNames = lib.mkForce false;
     interfaces = {
@@ -18,8 +17,19 @@
 
     };
   };
+
+  localCommands = ''
+      ip=$(ip addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
+      subnet=$(ip route | grep -Po '^\d+(.\d+){3}/\d+(?= dev eth0)')
+      gateway=$(ip route | grep -Po '(?<=default via )[.\d]+')
+      ip rule delete from $ip table 128 || true
+      ip rule add from $ip table 128 || true
+      ip route add table 128 to $subnet dev eth0 || true
+      ip route add table 128 default via $gateway || true
+    '';
+  };
+
   services.udev.extraRules = ''
     ATTR{address}=="1a:98:98:eb:3f:52", NAME="eth0"
-
   '';
 }
