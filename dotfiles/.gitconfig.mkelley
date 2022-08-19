@@ -1,0 +1,21 @@
+[user]
+	name = Michael Kelley
+	email = mkelley@digitalocean.com
+[core]
+	editor = nvim
+[init]
+	defaultBranch = main
+[feature]
+	manyFiles = true
+
+ [url "git@github.internal.digitalocean.com:"]
+    insteadOf = git://github.internal.digitalocean.com/
+    insteadOf = https://github.internal.digitalocean.com/
+    insteadOf = http://github.internal.digitalocean.com/
+
+[url "git@github.com:"]
+    insteadOf = git://github.com/
+    insteadOf = https://github.com/
+
+[mergetool]
+	keepBackup = true
