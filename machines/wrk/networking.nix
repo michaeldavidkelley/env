@@ -11,19 +11,15 @@
     interfaces = {
       eth0 = {
         ipv4.addresses = [
-          { address="10.124.56.109"; prefixLength=21; }
-        ];
-        ipv6.addresses = [
-          { address="fe80::e4af:85ff:fe09:c3f7"; prefixLength=64; }
+          { address="10.124.57.75"; prefixLength=21; }
         ];
         ipv4.routes = [ { address = "10.124.56.1"; prefixLength = 32; } ];
-        ipv6.routes = [ { address = ""; prefixLength = 128; } ];
       };
 
     };
   };
   services.udev.extraRules = ''
-    ATTR{address}=="e6:af:85:09:c3:f7", NAME="eth0"
+    ATTR{address}=="1a:98:98:eb:3f:52", NAME="eth0"
 
   '';
 }
