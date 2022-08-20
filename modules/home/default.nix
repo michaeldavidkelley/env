@@ -34,7 +34,7 @@ in {
         isNormalUser = true;
         home = "/home/${cfg.user}";
         description = "Michael Kelley";
-        extraGroups = [ "wheel" ];
+        extraGroups = [ "wheel" "docker"];
         shell = pkgs.fish;
         openssh.authorizedKeys.keys = keys;
       };
