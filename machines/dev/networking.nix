@@ -2,6 +2,7 @@
   # This file was populated at runtime with the networking
   # details gathered from the active system.
   networking = {
+    hostName = "dev"
     nameservers = [ "8.8.8.8" ];
     defaultGateway = "165.227.176.1";
     defaultGateway6 = "";
@@ -17,8 +18,11 @@
           { address="fe80::60b3:eff:fe34:ab8f"; prefixLength=64; }
         ];
         ipv4.routes = [ { address = "165.227.176.1"; prefixLength = 32; } ];
-        ipv6.routes = [ { address = ""; prefixLength = 128; } ];
       };
+    };
+
+    firewall = {
+      allowedTCPPorts = [ 3000 3001 8080 ];
     };
   };
   services.udev.extraRules = ''
