@@ -2,7 +2,7 @@
   # This file was populated at runtime with the networking
   # details gathered from the active system.
   networking = {
-    hostName = "dev"
+    hostName = "dev";
     nameservers = [ "8.8.8.8" ];
     defaultGateway = "165.227.176.1";
     defaultGateway6 = "";
