@@ -16,18 +16,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    _1password
-    htop
-    neovim
-    tree
-    git 
-    tmux
-    docker
-    docker-compose
-    which
-    go_1_19
     fly
-    git-crypt
     openconnect
     vault
   ];

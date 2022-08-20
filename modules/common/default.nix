@@ -36,7 +36,6 @@ in {
       cleanTmpDir = true;
       kernel.sysctl = {
         "fs.inotify.max_user_watches" = "1048576";
-        "net.ipv4.ip_forward" = "0";
       };
     };
 
@@ -75,7 +74,8 @@ in {
       tree
       unzip
       wget
-      go
+      neovim
+      git-crypt
     ];
 
     programs = {
