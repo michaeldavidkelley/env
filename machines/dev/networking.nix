@@ -22,6 +22,7 @@
     };
 
     firewall = {
+      allowedUDPPorts = [ 60001 ];
       allowedTCPPorts = [ 3000 3001 8080 ];
     };
   };
