@@ -21,6 +21,31 @@ packer.reset()
 
 packer.use 'wbthomason/packer.nvim'
 
+
+require('packer'). use{
+  'stevearc/dressing.nvim',
+}
+
+require('packer').use {
+  'lewis6991/gitsigns.nvim',
+  config = function()
+    require('gitsigns').setup()
+  end
+}
+
+require('packer').use {
+  'nvim-telescope/telescope.nvim',
+}
+
+require('packer').use {
+  'nvim-telescope/telescope-fzf-native.nvim',
+  requires = { 'nvim-telescope/telescope.nvim' },
+  run = 'make',
+  config = function()
+    require('telescope').load_extension('fzf')
+  end
+}
+
 if packer_bootstrap then
   packer.sync()
 end
@@ -62,26 +87,26 @@ vim.opt.tabstop = 2
 vim.opt.expandtab = true
 
 -- Save
-mapSilent('n', '<Leader>s', ':w<CR>')
-mapSilent('i', '<Leader>s', '<ESC>:w<CR>')
+mapSilent('n', '<leader>s', ':w<CR>')
+mapSilent('i', '<leader>s', '<ESC>:w<CR>')
 
 -- Quit
-mapSilent('n', '<Leader>q', ':q<CR>')
-mapSilent('i', '<Leader>q', '<ESC>:q<CR>')
+mapSilent('n', '<leader>q', ':q<CR>')
+mapSilent('i', '<leader>q', '<ESC>:q<CR>')
 
 -- Splits
-mapSilent('n', '<Leader>o', ':vsplit<CR>')
-mapSilent('i', '<Leader>o', '<ESC>:vsplit<CR>')
+mapSilent('n', '<leader>o', ':vsplit<CR>')
+mapSilent('i', '<leader>o', '<ESC>:vsplit<CR>')
 mapSilent('n', '<C-h>', '<C-w><C-h>')
 mapSilent('n', '<C-l>', '<C-w><C-l>')
-mapSilent('n', '<Leader>e', '<C-w>=')
-mapSilent('n', '<Leader>f', '<C-w>|')
+mapSilent('n', '<leader>e', '<C-w>=')
+mapSilent('n', '<leader>f', '<C-w>|')
 
 -- Tabs
-mapSilent('n', '<Leader>t', ':tabnew<CR>')
-mapSilent('i', '<Leader>t', '<ESC>:tabnew<CR>')
-mapSilent('n', '<Leader>tn', ':tabn<CR>')
-mapSilent('i', '<Leader>tn', '<ESC>:tabn<CR>')
-mapSilent('n', '<Leader>tp', ':tabp<CR>')
-mapSilent('i', '<Leader>tp', '<ESC>:tabp<CR>')
+mapSilent('n', '<leader>t', ':tabnew<CR>')
+mapSilent('i', '<leader>t', '<ESC>:tabnew<CR>')
+mapSilent('n', '<leader>tn', ':tabn<CR>')
+mapSilent('i', '<leader>tn', '<ESC>:tabn<CR>')
+mapSilent('n', '<leader>tp', ':tabp<CR>')
+mapSilent('i', '<leader>tp', '<ESC>:tabp<CR>')
 
