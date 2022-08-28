@@ -13,6 +13,9 @@
 
 (straight-use-package 'use-package)
 
+(use-package lsp-mode
+  :straight t)
+
 (use-package go-mode
   :straight t
   :mode "\\.go\\'")
@@ -29,6 +32,10 @@
 	org-default-notes-file "~/org/notes.org"
 	org-agenda-files '("~/org" "~/org/dailies" "~/org/1x1")
 	org-agenda-include-diary t))
+
+(use-package which-key
+  :straight t
+  :config (which-key-mode))
 
 (setq tab-width 2)
 
