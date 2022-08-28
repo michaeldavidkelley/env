@@ -47,6 +47,18 @@ require('packer').use {
   end
 }
 
+require('packer').use {
+  'nvim-treesitter/nvim-treesitter',
+}
+
+require('packer').use {
+  'x-ray/go.nvim',
+  requires = {'ray-x/guihua.lua'},
+  config = function()
+    require('go').setup()
+  end
+}
+
 if packer_bootstrap then
   packer.sync()
 end
