@@ -52,7 +52,7 @@ require('packer').use {
 }
 
 require('packer').use {
-  'x-ray/go.nvim',
+  'ray-x/go.nvim',
   requires = {'ray-x/guihua.lua'},
   config = function()
     require('go').setup()
