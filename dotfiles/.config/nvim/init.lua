@@ -3,7 +3,7 @@ function map(mode, lhs, rhs, opts)
   if opts then
     options = vim.tbl_extend("force", options, opts)
   end
-  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+  vim.keymap.set(mode, lhs, rhs, options)
 end
 
 function mapSilent(mode, lhs, rhs, opts)
@@ -21,10 +21,11 @@ vim.opt.swapfile = false
 vim.opt.number = true
 vim.opt.termguicolors = true
 vim.opt.listchars = { tab = '» ', trail = '·' }
+vim.opt.cursorline = true
 
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.opt.expandtab = true
 
 mapSilent('n', '<Leader>s', ':w<CR>')
-mapSilent('n', '<Leader><Leader>', '<ESC>')
+mapSilent('i', '<Leader><Leader>', '<ESC>')
