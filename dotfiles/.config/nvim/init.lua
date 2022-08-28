@@ -1,7 +1,9 @@
 -- Automatically install packer
 local fn = vim.fn
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+
 local packer_bootstrap
+
 
 if fn.empty(fn.glob(install_path)) > 0 then
   packer_bootstrap = fn.system({
@@ -22,7 +24,7 @@ packer.reset()
 packer.use 'wbthomason/packer.nvim'
 
 
-require('packer'). use{
+require('packer').use {
   'stevearc/dressing.nvim',
 }
 
@@ -35,6 +37,7 @@ require('packer').use {
 
 require('packer').use {
   'nvim-telescope/telescope.nvim',
+  requires = {'nvim-lua/plenary.nvim'},
 }
 
 require('packer').use {
