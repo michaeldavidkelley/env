@@ -1,13 +1,6 @@
-unction map(mode, keys, mapTo, opts)
-    local = options = { noremap = true }
-    if opts then
-        options = vim.tbl_extend("force", options, opts)
-    end
-    vim.api.nvim_set_keymap(mode, keys, mapTo, options)
-end
-
 vim.g.mapleader = ';'
 
+vim.opt.mouse = 'a'
 vim.opt.swapfile = false
 vim.opt.number = true
 vim.opt.termguicolors = true
