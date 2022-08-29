@@ -12,6 +12,24 @@ require('packer').use {
 require('packer').use {
   'nvim-telescope/telescope.nvim',
   requires = {'nvim-lua/plenary.nvim'},
+  config = function()
+    require('telescope').setup({
+      pickers = {
+        find_files = {
+          hidden = true
+        }
+      }
+    })
+
+    local function project_files()
+      local opts = {}
+      local ok = pcall(require('telescope.builtin').git_files, opts)
+      if not ok then require('telescope.builtin').find_files(opts) end
+    end
+
+    vim.keymap.set('n', '<leader>ff', project_files, { desc = 'Open project file' })
+    vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, { desc = 'Search for string' })
+  end
 }
 
 require('packer').use {
