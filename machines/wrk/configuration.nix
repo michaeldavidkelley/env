@@ -19,5 +19,6 @@
     fly
     openconnect
     vault
+    go_1_19
   ];
 }
