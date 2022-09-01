@@ -26,8 +26,7 @@
                    (setq-local tab-width 2))))
 
 (use-package vertico
-  :init
-  (vertico-mode))
+  :straight t)
 
 (use-package evil
   :straight t
