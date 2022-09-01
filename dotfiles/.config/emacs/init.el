@@ -60,5 +60,10 @@
   :straight t
   :config (which-key-mode))
 
+(use-package vertico
+  :ensure t
+  :init
+  (vertico-mode))
+
 (setq tab-width 2)
 
