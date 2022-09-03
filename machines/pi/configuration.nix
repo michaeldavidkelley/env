@@ -1,6 +1,5 @@
-{ self, inputs, pkgs, ... }: {
+{ self, pkgs, ... }: {
   imports = [
-    "${inputs.nixos-hardware}/raspberry-pi/3"
     ./hardware-configuration.nix
     ./networking.nix
   ];
@@ -15,10 +14,10 @@
     ];
 
     loader = {
-      raspberryPi = {
-        enable = true;
-        version = 3;
-      };
+      #raspberryPi = {
+      #  enable = true;
+      #  version = 3;
+      #};
       grub.enable = false;
       generic-extlinux-compatible.enable = true;
     };
