@@ -15,6 +15,7 @@ in {
       gh
       go
       gopls
+      hugo
       inotify-tools
       lazygit
       lua
