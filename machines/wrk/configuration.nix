@@ -12,6 +12,7 @@
     home =  {
       user = "mkelley";
       includeDOVPN = true;
+      gitconfig = "mkelley";
     };
   };
 

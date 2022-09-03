@@ -21,6 +21,11 @@ in {
         default = "users";
       };
 
+      gitconfig = mkOption {
+        type = types.str;
+        default = "michaeldavidkelley";
+      }
+
       includeDOVPN = mkOption {
         type = types.bool;
         default = false;
@@ -54,7 +59,7 @@ in {
           };
 
           ".gitconfig" = {
-            source = (../../dotfiles/.gitconfig. + "${cfg.user}");
+            source = (../../dotfiles/.gitconfig. + "${cfg.gitconfig}");
           };
 
           "bin/do-vpn.sh" = mkIf cfg.includeDOVPN {
