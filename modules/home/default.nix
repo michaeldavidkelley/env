@@ -24,7 +24,7 @@ in {
       gitconfig = mkOption {
         type = types.str;
         default = "michaeldavidkelley";
-      }
+      };
 
       includeDOVPN = mkOption {
         type = types.bool;
