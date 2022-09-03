@@ -1,4 +1,4 @@
-{ self, pkgs, ... }: {
+{ self, inputs, pkgs, ... }: {
   imports = [
     "${inputs.nixos-hardware}/raspberry-pi/3"
     ./hardware-configuration.nix
