@@ -48,6 +48,7 @@
       nixosConfigurations = {
         wrk = mkSystem inputs.nixpkgs "x86_64-linux" "wrk";
         dev = mkSystem inputs.nixpkgs "x86_64-linux" "dev";
+        pi = mkSystem inputs.nixpkgs "aarch64-linux" "pi";
       };
     };
 }
