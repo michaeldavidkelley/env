@@ -1,0 +1,12 @@
+[user]
+	name = Michael Kelley
+	email = mkelley@michaeldavidkelley.com
+[core]
+	editor = nvim
+[init]
+	defaultBranch = main
+[feature]
+	manyFiles = true
+
+[mergetool]
+	keepBackup = true
