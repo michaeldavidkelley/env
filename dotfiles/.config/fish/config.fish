@@ -8,9 +8,9 @@ if status is-interactive
 end
 
 if type -q go
-  set -U fish_user_path $HOME/bin (go env GOPATH)/bin
+  set -U fish_user_paths $HOME/bin (go env GOPATH)/bin
 else
-  set -U fish_user_path $HOME/bin
+  set -U fish_user_paths $HOME/bin
 end
 
 fish_vi_key_bindings
